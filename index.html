@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Milagros Kiara Macarena Melet · Tecnología de los Alimentos</title>
+<meta name="description" content="Portfolio de Milagros Kiara Macarena Melet, estudiante de la Tecnicatura en Tecnología de los Alimentos (UNAHUR). Calidad, inocuidad alimentaria y control de procesos.">
+<meta name="theme-color" content="#1F3A2E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F3A2E'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' text-anchor='middle' fill='%23F6F7F3'%3EMM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:#F6F7F3;
+--paper-2:#EDF1EA;
+--white:#FFFFFF;
+--ink:#1D2A23;
+--muted:#56645B;
+--forest:#1F3A2E;
+--forest-2:#2E5442;
+--sage:#C9D6C3;
+--line:#D8DFD4;
+--amber:#9A6A1C;
+--amber-bg:#F6ECD9;
+--serif:"Source Serif 4", Georgia, serif;
+--sans:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+--mono:"IBM Plex Mono", ui-monospace, monospace;
+--bar:68px;
+--wrap:1120px;
+--read:68ch;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.7 var(--sans);text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--forest-2);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--forest)}
+:focus-visible{outline:2px solid var(--forest-2);outline-offset:3px;border-radius:4px}
+strong{font-weight:600;color:var(--ink)}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--forest);margin:0;line-height:1.2;font-weight:600}
+p{margin:0 0 1em}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 40px}
+[id]{scroll-margin-top:calc(var(--bar) + 16px)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:12px;z-index:100;background:var(--white);padding:8px 14px}
+/* ---------- Barra de navegación ---------- */
+.bar{position:fixed;inset:0 0 auto 0;height:var(--bar);z-index:50;display:flex;align-items:center;transition:background .25s,box-shadow .25s}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;width:100%;max-width:1280px}
+.split.wide{grid-template-columns:1fr;gap:28px}
+.split.wide .know section{padding-right:36px}
+.split.wide .know section+section{padding-left:36px}
+.brand{font-family:var(--serif);font-size:20px;font-weight:600;color:#fff;text-decoration:none;letter-spacing:.2px;white-space:nowrap}
+.bar.solid{background:var(--forest);box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.nav{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.nav a{display:block;padding:8px 11px;border-radius:8px;color:rgba(255,255,255,.82);text-decoration:none;font-size:14.5px;font-weight:500;white-space:nowrap;transition:background .2s,color .2s}
+.nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.nav a.on{color:#fff;background:rgba(255,255,255,.16)}
+.menu-btn{display:none}
+.sheet{display:none}
+/* ---------- Portada ---------- */
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--forest)}
+.hero-img{position:absolute;inset:0;background:url("https://images.unsplash.com/photo-1475906089153-644d9452ce87?fm=jpg&q=80&w=2400&fit=crop") center 55%/cover no-repeat;transform:scale(1.04);animation:settle 1.6s ease-out forwards}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,35,27,.55) 0%,rgba(18,35,27,.55) 40%,rgba(18,35,27,.92) 100%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-top:calc(var(--bar) + 40px);padding-bottom:88px}
+.hero h1{color:#fff;font-size:clamp(44px,6vw,80px);font-weight:600;line-height:1.04;letter-spacing:-.5px;max-width:14ch}
+.hero .role{margin:26px 0 6px;font-size:20px;font-weight:500;letter-spacing:.4px;color:#E8EFE4}
+.hero .focus{margin:0;font-size:17px;color:rgba(255,255,255,.8)}
+.hero .actions{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+@keyframes settle{to{transform:scale(1)}}
+.btn{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px;border-radius:10px;font:600 15.5px/1 var(--sans);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .2s,color .2s,border-color .2s}
+.btn svg{width:18px;height:18px}
+.btn-light{background:#fff;color:var(--forest)}
+.btn-light:hover{background:var(--paper-2);color:var(--forest)}
+.btn-ghost{color:#fff;border-color:rgba(255,255,255,.45)}
+.btn-ghost:hover{color:#fff;border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-solid{background:var(--forest);color:#fff}
+.btn-solid:hover{background:var(--forest-2);color:#fff}
+/* ---------- Secciones ---------- */
+.sec{padding:112px 0}
+.sec.tint{background:var(--paper-2)}
+.sec.white{background:var(--white)}
+.sec-head{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:start}
+.sec-title{font-size:34px;letter-spacing:-.2px}
+.sec-kicker{display:block;font:500 14px/1.4 var(--sans);color:var(--muted);margin-top:10px}
+.prose{max-width:var(--read)}
+.prose p{color:#2C3A32}
+.lead{font-size:19.5px;line-height:1.65;color:var(--ink)}
+.split{display:grid;grid-template-columns:260px 1fr;gap:48px;padding:40px 0;border-top:1px solid var(--line)}
+.split:first-child{border-top:0;padding-top:0}
+.split h2{font-size:28px}
+.split h3{font-size:24px}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:12px;background:var(--white);margin-bottom:28px;max-width:var(--read)}
+.facts div{padding:16px 20px}
+.facts div+div{border-left:1px solid var(--line)}
+.facts dt{font-size:13.5px;color:var(--muted);margin-bottom:2px}
+.facts dd{margin:0;font-weight:500}
+.subjects{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:6px 0 0;padding:0}
+.subjects li{background:var(--white);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:15.5px}
+.know{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid var(--forest)}
+.know section{padding:26px 28px 6px 0}
+.know section+section{padding-left:28px;border-left:1px solid var(--line)}
+.know h4{font-size:20px;margin-bottom:14px}
+.ticks{list-style:none;margin:0;padding:0}
+.ticks li{position:relative;padding-left:26px;margin-bottom:12px;font-size:16px;line-height:1.6;color:#2C3A32}
+.ticks li::before{content:"";position:absolute;left:2px;top:.62em;width:12px;height:6px;border-left:2px solid var(--forest-2);border-bottom:2px solid var(--forest-2);transform:rotate(-45deg)}
+/* ---------- Índice de proyectos ---------- */
+.index{list-style:none;margin:0 0 28px;padding:0;border-top:1px solid var(--line)}
+.index a{display:grid;grid-template-columns:72px 1fr 28px;align-items:center;gap:16px;padding:22px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:background .2s,padding .2s}
+.index a:hover{background:var(--white);padding-left:14px}
+.index .n{font:600 30px/1 var(--serif);color:var(--forest-2)}
+.index .t{font-size:18px;font-weight:500}
+.index svg{width:20px;height:20px;color:var(--muted)}
+.disclaimer{max-width:var(--read);font-size:15.5px;color:var(--muted);border-left:3px solid var(--sage);padding:2px 0 2px 18px;margin:0}
+/* ---------- Proyectos ---------- */
+.proj{padding:104px 0;border-top:1px solid var(--line)}
+.proj:nth-of-type(even){background:var(--white)}
+.proj-head{display:grid;grid-template-columns:140px 1fr;gap:24px;align-items:start;margin-bottom:44px}
+.proj-num{font:600 96px/.85 var(--serif);color:var(--sage);letter-spacing:-2px}
+.proj-area{font-size:15px;font-weight:500;color:var(--forest-2);margin-bottom:10px;display:block}
+.proj h2{font-size:clamp(30px,3.4vw,42px);letter-spacing:-.3px;max-width:22ch}
+.proj-body{margin-left:164px}
+.proj h3{font-size:24px;margin:52px 0 16px}
+.proj h3:first-child{margin-top:0}
+.flow{list-style:none;margin:8px 0 18px;padding:0;display:flex;flex-wrap:wrap;gap:8px 6px;align-items:center}
+.flow li{display:flex;align-items:center;gap:6px}
+.flow span{background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:7px 12px;font-size:15px;line-height:1.35}
+.flow li+li::before{content:"";width:16px;height:2px;background:var(--sage);flex:none}
+.proj:nth-of-type(even) .flow span{background:var(--paper)}
+.note{font-size:15.5px;color:var(--muted)}
+/* Tablas */
+.tbl{width:100%;border-collapse:separate;border-spacing:0;font-size:15.5px;line-height:1.55;background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.proj:nth-of-type(even) .tbl{background:var(--paper)}
+.tbl th{text-align:left;font:600 13.5px/1.3 var(--sans);color:var(--muted);background:var(--paper-2);padding:12px 16px;border-bottom:1px solid var(--line)}
+.tbl td{padding:16px;vertical-align:top;border-bottom:1px solid var(--line);color:#2C3A32}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td.stage{font-weight:600;color:var(--ink);white-space:nowrap}
+.tbl td.num{text-align:center;width:56px}
+.pg{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--paper-2);font:600 15px/1 var(--sans);color:var(--forest)}
+.pg.hi{background:var(--forest);color:#fff}
+.pill{display:inline-block;border-radius:999px;padding:3px 11px;font-size:13.5px;font-weight:500;background:var(--paper-2);color:var(--forest);white-space:nowrap}
+.pill.warn{background:var(--amber-bg);color:var(--amber)}
+.pill.na{background:#ECEDEA;color:#5E625E}
+/* Formulario de registro */
+.form{border:1.5px solid var(--forest);border-radius:12px;background:var(--white);overflow:hidden;max-width:880px}
+.proj:nth-of-type(even) .form{background:var(--paper)}
+.form-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;background:var(--forest);color:#fff}
+.form-top b{font-family:var(--serif);font-size:18px;font-weight:600}
+.code{font:500 14px/1 var(--mono);background:rgba(255,255,255,.14);padding:6px 10px;border-radius:6px;white-space:nowrap}
+.form dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:0}
+.form dl div{padding:14px 20px;border-bottom:1px solid var(--line)}
+.form dl div:nth-child(odd){border-right:1px solid var(--line)}
+.form dl div.full{grid-column:1/-1;border-right:0}
+.form dt{font-size:13px;color:var(--muted);margin-bottom:2px}
+.form dd{margin:0;font-size:15.5px;line-height:1.5}
+.form dl div:last-child,.form dl div.last{border-bottom:0}
+.steps{list-style:none;counter-reset:s;margin:0;padding:0;max-width:var(--read)}
+.steps li{counter-increment:s;position:relative;padding:0 0 18px 52px;color:#2C3A32}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--forest-2);display:grid;place-items:center;font:600 15px/1 var(--sans);color:var(--forest)}
+.steps li:not(:last-child)::after{content:"";position:absolute;left:17px;top:36px;bottom:4px;width:1.5px;background:var(--line)}
+.fields{list-style:none;margin:0;padding:0;max-width:var(--read)}
+.fields li{padding:12px 0;border-bottom:1px solid var(--line);color:#2C3A32}
+.fields li:last-child{border-bottom:0}
+.sources{list-style:none;margin:0;padding:0;display:grid;gap:10px;max-width:var(--read)}
+.sources a{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink);background:var(--white);font-size:15.5px;line-height:1.5}
+.proj:nth-of-type(even) .sources a{background:var(--paper)}
+.sources a:hover{border-color:var(--forest-2)}
+.sources svg{flex:none;width:16px;height:16px;margin-top:3px;color:var(--forest-2)}
+.conclusion{max-width:var(--read);font-family:var(--serif);font-size:20px;line-height:1.65;color:var(--ink)}
+/* ---------- Contacto ---------- */
+.contact{background:var(--forest);color:#E7EEE4;padding:112px 0 64px}
+.contact h2{color:#fff;font-size:40px}
+.contact .lead{color:#E7EEE4;max-width:58ch;margin:20px 0 40px}
+.channels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:960px}
+.channels a{display:block;padding:20px 22px;border:1px solid rgba(255,255,255,.22);border-radius:12px;color:#fff;text-decoration:none;transition:border-color .2s,background .2s}
+.channels a:hover{border-color:#fff;background:rgba(255,255,255,.06);color:#fff}
+.channels span{display:block;font-size:13.5px;color:rgba(255,255,255,.7);margin-bottom:6px}
+.channels b{font-weight:500;font-size:16.5px;word-break:break-word}
+.contact .actions{margin-top:28px}
+.method{margin-top:72px;padding-top:28px;border-top:1px solid rgba(255,255,255,.18);max-width:var(--read)}
+.method h3{color:#fff;font-size:20px;margin-bottom:8px}
+.method p{color:rgba(255,255,255,.75);font-size:15.5px}
+.foot{margin-top:56px;font-size:14px;color:rgba(255,255,255,.55)}
+.fab,.chips{display:none}
+/* ============ Escritorio angosto ============ */
+@media (max-width:1180px){
+.nav a{padding:8px 8px;font-size:14px}
+}
+/* ============ Tablet ============ */
+@media (max-width:1020px){
+.nav{display:none}
+.menu-btn{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;cursor:pointer}
+.menu-btn svg{width:22px;height:22px}
+.sheet{display:block;position:fixed;inset:0;z-index:60;background:var(--forest);color:#fff;padding:calc(var(--bar) + 12px) 28px 32px;transform:translateY(-100%);transition:transform .35s ease;overflow-y:auto}
+.sheet.open{transform:none}
+.sheet ul{list-style:none;margin:0;padding:0}
+.sheet a{display:block;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.14);color:#fff;text-decoration:none;font:500 22px/1.25 var(--serif)}
+.sheet a.on{color:var(--sage)}
+.sheet a.btn-light{color:var(--forest)}
+.sheet .btn{margin-top:28px;font-family:var(--sans);font-size:16px;border-bottom:0;padding:0 22px;display:inline-flex}
+.sheet-close{position:absolute;top:12px;right:20px}
+.sec-head,.split{grid-template-columns:minmax(0,1fr);gap:16px}
+.split>*{min-width:0}
+.proj-body{margin-left:0}
+.proj-head{grid-template-columns:96px 1fr}
+.proj-num{font-size:72px}
+.know{grid-template-columns:1fr}
+.know section,.know section+section{padding:24px 0 6px;border-left:0;border-top:1px solid var(--line)}
+.know section:first-child{border-top:0}
+}
+/* ============ Celular (diseño exclusivo) ============ */
+@media (max-width:700px){
+:root{--bar:58px}
+body{font-size:16.5px;line-height:1.68}
+.wrap{padding:0 20px}
+.brand{font-size:18px}
+.hero{min-height:auto}
+.hero .wrap{padding-top:calc(var(--bar) + 72px);padding-bottom:56px}
+.hero h1{font-size:42px;line-height:1.06}
+.hero .role{font-size:16px;margin-top:20px}
+.hero .focus{font-size:15.5px}
+.hero .actions{margin-top:28px}
+.hero .actions .btn{flex:1;justify-content:center}
+.sec{padding:64px 0}
+.sec-title{font-size:30px}
+.split{padding:28px 0}
+.split h2{font-size:25px}
+.lead{font-size:17.5px}
+.facts{grid-template-columns:1fr}
+.facts div+div{border-left:0;border-top:1px solid var(--line)}
+.subjects li{font-size:14.5px;padding:7px 14px}
+.chips{display:flex;gap:8px;overflow-x:auto;margin:0 -20px 24px;padding:2px 20px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chips a{flex:none;padding:9px 15px;border-radius:999px;background:var(--white);border:1px solid var(--line);font-size:14.5px;font-weight:500;color:var(--forest);text-decoration:none}
+.index{display:none}
+.proj{padding:64px 0}
+.proj-head{grid-template-columns:1fr;gap:6px;margin-bottom:28px}
+.proj-num{font-size:56px}
+.proj h2{font-size:28px}
+.proj h3{font-size:21px;margin:40px 0 14px}
+.flow{flex-direction:column;align-items:stretch;gap:0}
+.flow li{flex-direction:column;align-items:stretch;gap:0}
+.flow li+li::before{width:2px;height:12px;margin-left:18px}
+.flow span{font-size:15px}
+/* tablas -> fichas apiladas */
+.tbl,.tbl tbody,.tbl tr,.tbl td{display:block;width:100%}
+.tbl{border:0;background:transparent!important;border-radius:0}
+.tbl thead{display:none}
+.tbl tr{background:var(--white);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;padding:6px 0}
+.proj:nth-of-type(even) .tbl tr{background:var(--paper)}
+.tbl td{border:0;padding:6px 16px}
+.tbl td[data-l]::before{content:attr(data-l);display:block;font-size:12.5px;color:var(--muted);font-weight:500;margin-bottom:1px}
+.tbl td.stage{font-family:var(--serif);font-size:19px;color:var(--forest);padding-top:10px;white-space:normal}
+.tbl td.num{display:inline-block;width:auto;padding:4px 0 8px 16px;text-align:left}
+.tbl td.num::before{display:inline!important;margin-right:6px}
+.tbl tr td:last-child{padding-bottom:12px}
+.form-top{flex-wrap:wrap}
+.form dl{grid-template-columns:1fr}
+.form dl div:nth-child(odd){border-right:0}
+.form dl div{padding:12px 16px}
+.steps li{padding-left:46px}
+.conclusion{font-size:18px}
+.contact{padding:72px 0 120px}
+.contact h2{font-size:32px}
+.channels{grid-template-columns:1fr}
+.contact .actions .btn{width:100%;justify-content:center}
+.fab{display:inline-flex;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:40;height:50px;padding:0 20px;border-radius:999px;background:var(--forest);color:#fff;box-shadow:0 8px 24px rgba(20,40,30,.28);font:600 15px/1 var(--sans);align-items:center;gap:8px;text-decoration:none;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s}
+.fab svg{width:18px;height:18px}
+.fab.show{opacity:1;transform:none;pointer-events:auto}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#perfil">Saltar al contenido</a>
+<header class="bar" id="bar">
+<div class="wrap">
+<a class="brand" href="#inicio">Milagros Melet</a>
+<nav aria-label="Secciones">
+<ul class="nav">
+<li><a href="#inicio" data-s="inicio">Inicio</a></li>
+<li><a href="#formacion" data-s="formacion">Formación y conocimientos</a></li>
+<li><a href="#p01" data-s="p01">01 · Conserva vegetal</a></li>
+<li><a href="#p02" data-s="p02">02 · Rotulado de alimentos</a></li>
+<li><a href="#p03" data-s="p03">03 · Materias primas</a></li>
+<li><a href="#p04" data-s="p04">04 · Control de procesos</a></li>
+<li><a href="#contacto" data-s="contacto">Contacto</a></li>
+</ul>
+</nav>
+<button class="menu-btn" id="menuOpen" aria-label="Abrir menú" aria-expanded="false" aria-controls="sheet">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+</button>
+</div>
+</header>
+<div class="sheet" id="sheet" aria-hidden="true">
+<button class="menu-btn sheet-close" id="menuClose" aria-label="Cerrar menú">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+</button>
+<ul>
+<li><a href="#inicio" data-s="inicio">Inicio</a></li>
+<li><a href="#formacion" data-s="formacion">Formación y conocimientos</a></li>
+<li><a href="#p01" data-s="p01">01 · Conserva vegetal</a></li>
+<li><a href="#p02" data-s="p02">02 · Rotulado de alimentos</a></li>
+<li><a href="#p03" data-s="p03">03 · Materias primas</a></li>
+<li><a href="#p04" data-s="p04">04 · Control de procesos</a></li>
+<li><a href="#contacto" data-s="contacto">Contacto</a></li>
+</ul>
+<a class="btn btn-light" href="CV-Milagros-Melet.pdf" download>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>CV
+</a>
+</div>
+<main>
+<!-- ================= PORTADA ================= -->
+<section class="hero" id="inicio">
+<div class="hero-img" role="img" aria-label="Frascos de laboratorio con brotes verdes"></div>
+<div class="wrap">
+<h1>Milagros Kiara Macarena Melet</h1>
+<p class="role">TECNOLOGÍA DE LOS ALIMENTOS</p>
+<p class="focus">Calidad · Inocuidad alimentaria · Control de procesos</p>
+<div class="actions">
+<a class="btn btn-light" href="CV-Milagros-Melet.pdf" download>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>CV
+</a>
+<a class="btn btn-ghost" href="#contacto">Contacto</a>
+</div>
+</div>
+</section>
+<!-- ================= PERFIL ================= -->
+<section class="sec" id="perfil">
+<div class="wrap">
+<div class="split">
+<div>
+<h2>Tecnología de los Alimentos</h2>
+</div>
+<div class="prose">
+<p class="lead"><strong>Calidad · Inocuidad alimentaria · Control de procesos</strong></p>
+<p>Formación en curso | Universidad Nacional de Hurlingham (UNAHUR)</p>
+</div>
+</div>
+<div class="split">
+<div><h2>Presentación profesional</h2></div>
+<div class="prose">
+<p class="lead">Soy estudiante de la Tecnicatura en Tecnología de los Alimentos en la Universidad Nacional de Hurlingham (UNAHUR), interesada en desarrollarme profesionalmente en la industria alimentaria.</p>
+<p>Me interesa especialmente el área de Calidad, con foco en la inocuidad alimentaria, el control de procesos y la mejora continua. Busco fortalecer mi formación mediante el aprendizaje práctico, el análisis técnico y el desarrollo de propuestas orientadas a la calidad y la seguridad de los alimentos.</p>
+</div>
+</div>
+<div class="split">
+<div><h2>Objetivos profesionales</h2></div>
+<div class="prose">
+<p>Mi objetivo es incorporarme a la industria alimentaria y desarrollarme en el área de Calidad, adquiriendo experiencia práctica y profundizando progresivamente mis conocimientos técnicos.</p>
+<p>Me interesa participar en actividades vinculadas con el control de calidad, la inocuidad alimentaria, el seguimiento de procesos y la documentación de controles.</p>
+<p>Busco construir una trayectoria profesional basada en el aprendizaje continuo, la responsabilidad, el análisis y la mejora continua, con el propósito de asumir progresivamente mayores desafíos dentro del sector.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= FORMACIÓN ================= -->
+<section class="sec tint" id="formacion">
+<div class="wrap">
+<div class="split">
+<div><h2>Formación académica</h2></div>
+<div>
+<dl class="facts">
+<div><dt>Carrera</dt><dd><strong>Tecnicatura en Tecnología de los Alimentos</strong></dd></div>
+<div><dt>Institución</dt><dd>Universidad Nacional de Hurlingham (UNAHUR).<br>Estado: en curso.</dd></div>
+</dl>
+<h3 style="margin-bottom:12px">Asignaturas cursadas</h3>
+<ul class="subjects">
+<li>Introducción a la Tecnología de los Alimentos</li>
+<li>Introducción a la Química</li>
+<li>Seguridad e Higiene</li>
+<li>Biología</li>
+<li>Matemática I</li>
+</ul>
+</div>
+</div>
+<div class="split wide">
+<div><h2>Conocimientos técnicos</h2></div>
+<div class="know">
+<section>
+<h4>Calidad e inocuidad alimentaria</h4>
+<ul class="ticks">
+<li>Fundamentos introductorios de calidad e inocuidad de los alimentos.</li>
+<li>Identificación de peligros potenciales que pueden comprometer la seguridad de un producto.</li>
+<li>Prevención de la contaminación y de la contaminación cruzada.</li>
+<li>Importancia de la higiene durante la manipulación y elaboración de alimentos.</li>
+</ul>
+</section>
+<section>
+<h4>Procesos y control</h4>
+<ul class="ticks">
+<li>Comprensión introductoria de las etapas de elaboración de alimentos.</li>
+<li>Identificación de variables y condiciones que pueden influir en la calidad del producto.</li>
+<li>Fundamentos de trazabilidad e identificación de lotes.</li>
+<li>Importancia del control de materias primas, productos y condiciones de elaboración.</li>
+</ul>
+</section>
+<section>
+<h4>Documentación y mejora</h4>
+<ul class="ticks">
+<li>Importancia de los registros para documentar controles y procesos.</li>
+<li>Identificación y documentación de desvíos o no conformidades.</li>
+<li>Fundamentos de las acciones correctivas y del seguimiento de su eficacia.</li>
+<li>Consulta de normativa alimentaria y fuentes técnicas para analizar situaciones concretas.</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= PROYECTOS ================= -->
+<section class="sec" id="proyectos">
+<div class="wrap">
+<div class="split">
+<div><h2>Cuatro proyectos técnicos</h2></div>
+<div>
+<nav class="chips" aria-label="Proyectos">
+<a href="#p01">01 · Conserva vegetal</a>
+<a href="#p02">02 · Rotulado</a>
+<a href="#p03">03 · Materias primas</a>
+<a href="#p04">04 · Control de procesos</a>
+</nav>
+<ul class="index">
+<li><a href="#p01"><span class="n">01</span><span class="t">Evaluación preliminar de peligros y controles en una conserva vegetal.</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m0 0l-6-6m6 6l6-6"/></svg></a></li>
+<li><a href="#p02"><span class="n">02</span><span class="t">Revisión documental de un rótulo de alimento envasado.</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m0 0l-6-6m6 6l6-6"/></svg></a></li>
+<li><a href="#p03"><span class="n">03</span><span class="t">Control de recepción de materias primas e ingredientes.</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m0 0l-6-6m6 6l6-6"/></svg></a></li>
+<li><a href="#p04"><span class="n">04</span><span class="t">Seguimiento de parámetros durante un proceso de elaboración.</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m0 0l-6-6m6 6l6-6"/></svg></a></li>
+</ul>
+<p class="disclaimer">Los cuatro proyectos son ejercicios académicos personales simulados, elaborados con fines formativos. Los productos, registros y escenarios se han creado para ilustrar métodos de análisis; no corresponden a auditorías, validaciones industriales, ensayos de laboratorio, resultados reales ni experiencia laboral.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= PROYECTO 01 ================= -->
+<article class="proj" id="p01">
+<div class="wrap">
+<header class="proj-head">
+<div class="proj-num" aria-hidden="true">01</div>
+<div>
+<span class="proj-area">Conserva vegetal</span>
+<h2>Evaluación preliminar de peligros y controles en una conserva vegetal</h2>
+</div>
+</header>
+<div class="proj-body">
+<dl class="facts">
+<div><dt>Tipo de trabajo</dt><dd>ejercicio técnico académico simulado.</dd></div>
+<div><dt>Producto modelo</dt><dd>chauchas en conserva, envasadas herméticamente y destinadas a conservarse a temperatura ambiente.</dd></div>
+</dl>
+<h3>Resumen</h3>
+<div class="prose"><p>Se propone un análisis preliminar de peligros que podrían presentarse durante la elaboración de una conserva vegetal. Se consideran peligros biológicos, químicos y físicos, posibles medidas de control, registros de seguimiento, trazabilidad y gestión de desvíos. El ejercicio destaca que el tratamiento térmico debe establecerse y validarse para el producto, el envase y el proceso específicos por personal competente.</p></div>
+<h3>Objetivo</h3>
+<div class="prose"><p>Identificar peligros potenciales y proponer medidas preliminares de control y documentación para una conserva vegetal.</p></div>
+<h3>Flujo general del proceso</h3>
+<ol class="flow">
+<li><span>Recepción de materias primas y envases</span></li>
+<li><span>selección y preparación</span></li>
+<li><span>lavado</span></li>
+<li><span>acondicionamiento o escaldado, si corresponde</span></li>
+<li><span>llenado y agregado de líquido de cobertura</span></li>
+<li><span>cierre hermético</span></li>
+<li><span>tratamiento térmico programado y validado</span></li>
+<li><span>enfriamiento controlado</span></li>
+<li><span>inspección del lote</span></li>
+<li><span>almacenamiento y distribución.</span></li>
+</ol>
+<p class="note">El flujo es orientativo y debe adaptarse a la formulación y al proceso industrial real.</p>
+<h3>Matriz preliminar de peligros</h3>
+<div class="prose"><p>Escala ilustrativa: probabilidad (P) y gravedad (G), de 1 a 3; la puntuación se calcula como P × G. Es una herramienta exploratoria creada para este ejercicio, no una escala oficial ni un análisis HACCP formal. No determina por sí sola puntos críticos de control.</p></div>
+<table class="tbl">
+<thead><tr><th>Etapa</th><th>P</th><th>G</th><th>Peligro potencial</th><th>Medida de control propuesta</th></tr></thead>
+<tbody>
+<tr><td class="stage">Recepción</td><td class="num" data-l="P:"><span class="pg">2</span></td><td class="num" data-l="G:"><span class="pg hi">3</span></td><td data-l="Peligro potencial:">contaminación microbiológica, residuos químicos o materias extrañas.</td><td data-l="Medida de control propuesta:">evaluar proveedor, inspeccionar materias primas y aplicar criterios de aceptación definidos.</td></tr>
+<tr><td class="stage">Lavado y preparación</td><td class="num" data-l="P:"><span class="pg">2</span></td><td class="num" data-l="G:"><span class="pg hi">3</span></td><td data-l="Peligro potencial:">contaminación por agua, equipos o manipulación.</td><td data-l="Medida de control propuesta:">usar agua potable y aplicar procedimientos de higiene.</td></tr>
+<tr><td class="stage">Llenado</td><td class="num" data-l="P:"><span class="pg">2</span></td><td class="num" data-l="G:"><span class="pg">2</span></td><td data-l="Peligro potencial:">cuerpos extraños o contaminación durante la operación.</td><td data-l="Medida de control propuesta:">controlar higiene, utensilios y condiciones de llenado.</td></tr>
+<tr><td class="stage">Cierre</td><td class="num" data-l="P:"><span class="pg">2</span></td><td class="num" data-l="G:"><span class="pg hi">3</span></td><td data-l="Peligro potencial:">pérdida de hermeticidad.</td><td data-l="Medida de control propuesta:">verificar el cierre con criterios y métodos definidos para el envase.</td></tr>
+<tr><td class="stage">Tratamiento térmico</td><td class="num" data-l="P:"><span class="pg">2</span></td><td class="num" data-l="G:"><span class="pg hi">3</span></td><td data-l="Peligro potencial:">supervivencia de microorganismos peligrosos, incluido C. botulinum.</td><td data-l="Medida de control propuesta:">aplicar únicamente un proceso térmico programado y validado para el producto y envase.</td></tr>
+<tr><td class="stage">Enfriamiento</td><td class="num" data-l="P:"><span class="pg">2</span></td><td class="num" data-l="G:"><span class="pg hi">3</span></td><td data-l="Peligro potencial:">recontaminación o ingreso de agua por cierres defectuosos.</td><td data-l="Medida de control propuesta:">controlar el enfriamiento y la integridad del cierre según el proceso establecido.</td></tr>
+<tr><td class="stage">Almacenamiento</td><td class="num" data-l="P:"><span class="pg">2</span></td><td class="num" data-l="G:"><span class="pg">2</span></td><td data-l="Peligro potencial:">daño del envase, deterioro o pérdida de trazabilidad.</td><td data-l="Medida de control propuesta:">inspeccionar envases, condiciones de almacenamiento e identificación del lote.</td></tr>
+</tbody>
+</table>
+<h3>Modelo de registro de no conformidad</h3>
+<div class="form">
+<div class="form-top"><b>Registro de no conformidad</b><span class="code">NC-001</span></div>
+<dl>
+<div class="full"><dt>Identificación</dt><dd>NC-001 (ejemplo ficticio). Lote: CH-001 (ficticio).</dd></div>
+<div class="full"><dt>Etapa</dt><dd>tratamiento térmico.</dd></div>
+<div class="full"><dt>Desvío</dt><dd>no se dispone de evidencia suficiente para confirmar el cumplimiento del proceso térmico programado.</dd></div>
+<div class="full"><dt>Contención</dt><dd>identificar y retener el lote; bloquear su liberación hasta contar con una evaluación técnica documentada.</dd></div>
+<div class="full"><dt>Evaluación</dt><dd>revisar los registros y la documentación del proceso con personal competente.</dd></div>
+<div class="full"><dt>Disposición</dt><dd>reproceso solo si está técnicamente validado y autorizado; de lo contrario, rechazo y descarte seguro conforme al procedimiento aplicable.</dd></div>
+</dl>
+</div>
+<h3>Conclusión</h3>
+<p class="conclusion">La inocuidad de una conserva vegetal depende de controles coordinados sobre materias primas, higiene, cierre hermético, tratamiento térmico y trazabilidad. Los registros permiten documentar el cumplimiento y gestionar desvíos. La inspección visual no sustituye la validación del proceso ni la evaluación técnica.</p>
+<h3>Fuentes de consulta</h3>
+<ul class="sources">
+<li><a href="https://www.argentina.gob.ar/anmat/codigoalimentario" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>ANMAT — Código Alimentario Argentino</a></li>
+<li><a href="https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-29-2025-414033/texto" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>Resolución Conjunta 29/2025, artículo 926</a></li>
+<li><a href="https://www.argentina.gob.ar/node/456993" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>SENASA — información sobre botulismo y conservas</a></li>
+<li><a href="https://codex.fao.org/codex-texts/find-a-codex-text" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>Codex Alimentarius — códigos de prácticas, incluido CXC 23-1979</a></li>
+</ul>
+</div>
+</div>
+</article>
+<!-- ================= PROYECTO 02 ================= -->
+<article class="proj" id="p02">
+<div class="wrap">
+<header class="proj-head">
+<div class="proj-num" aria-hidden="true">02</div>
+<div>
+<span class="proj-area">Rotulado de alimentos</span>
+<h2>Revisión documental de un rótulo de alimento envasado</h2>
+</div>
+</header>
+<div class="proj-body">
+<dl class="facts">
+<div><dt>Tipo de trabajo</dt><dd>proyecto académico personal simulado.</dd></div>
+<div><dt>Producto modelo</dt><dd>galletitas saladas envasadas.</dd></div>
+</dl>
+<h3>Resumen</h3>
+<div class="prose"><p>Se propone una revisión documental hipotética de un rótulo de alimento envasado, utilizando una lista de verificación para identificar información ausente, declaraciones que requieren respaldo y aspectos que no pueden confirmarse sin documentación adicional. No se trata de una aprobación regulatoria.</p></div>
+<h3>Metodología</h3>
+<ol class="steps">
+<li>Definir el producto modelo y la información disponible.</li>
+<li>Consultar la normativa oficial aplicable al tipo de alimento.</li>
+<li>Revisar los elementos del rótulo mediante una lista de verificación.</li>
+<li>Clasificar los resultados como observaciones, posibles desvíos o puntos pendientes de verificación.</li>
+<li>Documentar hallazgos y acciones propuestas sin declarar conformidad definitiva cuando falta evidencia.</li>
+</ol>
+<h3>Rótulo hipotético utilizado</h3>
+<div class="prose">
+<p>Marca ficticia: <strong>CRUJIENTAS</strong>. Denominación: galletitas saladas. Contenido neto declarado: 200 g. Ingredientes del ejemplo: harina de trigo, aceite vegetal, sal, levadura y extracto de malta.</p>
+<p>El modelo incluye una declaración “100 % naturales”, datos nutricionales ilustrativos y datos de empresa ficticios; no muestra lote ni fecha de duración. Todos los datos son inventados y no corresponden a un producto comercial ni a resultados analíticos.</p>
+</div>
+<h3>Lista de verificación y hallazgos</h3>
+<table class="tbl">
+<thead><tr><th>Elemento</th><th>Estado</th><th>Hallazgo</th></tr></thead>
+<tbody>
+<tr><td class="stage">Denominación de venta</td><td data-l="Estado"><span class="pill">Revisión preliminar.</span></td><td data-l="Hallazgo">Verificar que identifique adecuadamente el alimento conforme a su categoría.</td></tr>
+<tr><td class="stage">Ingredientes</td><td data-l="Estado"><span class="pill">Pendiente.</span></td><td data-l="Hallazgo">Confirmar composición real, orden de declaración y requisitos aplicables.</td></tr>
+<tr><td class="stage">Contenido neto</td><td data-l="Estado"><span class="pill">Pendiente de validación.</span></td><td data-l="Hallazgo">Se declaran 200 g; verificar requisitos metrológicos y de presentación.</td></tr>
+<tr><td class="stage">Origen y responsable</td><td data-l="Estado"><span class="pill">Pendiente.</span></td><td data-l="Hallazgo">Confirmar los datos obligatorios del establecimiento y responsable.</td></tr>
+<tr><td class="stage">Lote</td><td data-l="Estado"><span class="pill warn">Observación prioritaria.</span></td><td data-l="Hallazgo">El modelo no muestra identificación de lote; verificar el requisito aplicable e incorporar identificación trazable antes de aprobar.</td></tr>
+<tr><td class="stage">Fecha de duración</td><td data-l="Estado"><span class="pill warn">Observación prioritaria.</span></td><td data-l="Hallazgo">El modelo no muestra fecha de duración; determinar la indicación exigible para el producto y su presentación antes de aprobar.</td></tr>
+<tr><td class="stage">Información nutricional</td><td data-l="Estado"><span class="pill">Pendiente.</span></td><td data-l="Hallazgo">Los valores son ilustrativos y no tienen respaldo documental; no deben publicarse como datos reales.</td></tr>
+<tr><td class="stage">Rotulado nutricional frontal</td><td data-l="Estado"><span class="pill">Pendiente.</span></td><td data-l="Hallazgo">Determinar aplicabilidad con composición y criterios regulatorios vigentes.</td></tr>
+<tr><td class="stage">“100 % naturales”</td><td data-l="Estado"><span class="pill warn">Requiere revisión.</span></td><td data-l="Hallazgo">Evaluar respaldo y pertinencia normativa; retirar o modificar si la declaración no puede justificarse o induce a error.</td></tr>
+<tr><td class="stage">Legibilidad</td><td data-l="Estado"><span class="pill na">No evaluable.</span></td><td data-l="Hallazgo">No puede evaluarse el diseño gráfico a partir del texto del ejemplo.</td></tr>
+</tbody>
+</table>
+<h3>Registro de revisión</h3>
+<div class="form">
+<div class="form-top"><b>Registro de revisión</b><span class="code">ROT-001</span></div>
+<dl>
+<div><dt>Código</dt><dd>ROT-001 (ficticio).</dd></div>
+<div><dt>Producto</dt><dd>galletitas saladas — caso simulado.</dd></div>
+<div class="full"><dt>Documento</dt><dd>modelo hipotético de rótulo.</dd></div>
+<div class="full"><dt>Resultado</dt><dd>se identificaron dos observaciones prioritarias y varios puntos pendientes de verificación.</dd></div>
+<div class="full"><dt>Estado</dt><dd>ejercicio formativo; no corresponde a una evaluación oficial.</dd></div>
+</dl>
+</div>
+<h3>Conclusión</h3>
+<p class="conclusion">La revisión permite ordenar la verificación del rótulo y distinguir entre información ausente, declaraciones que requieren respaldo y aspectos que no pueden concluirse sin datos adicionales. Antes de aprobar un rótulo real, corresponde verificar la normativa vigente y la información específica del producto.</p>
+<h3>Fuentes de consulta</h3>
+<ul class="sources">
+<li><a href="https://www.argentina.gob.ar/anmat/codigoalimentario" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>ANMAT — Código Alimentario Argentino</a></li>
+<li><a href="https://www.argentina.gob.ar/normativa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>Portal oficial de normativa argentina</a></li>
+<li><a href="https://www.argentina.gob.ar/sites/default/files/bancos/2023-10/2023-10-manual-normativa-ef.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>Argentina.gob.ar — Manual de aplicación del rotulado nutricional frontal</a></li>
+<li><a href="https://alimentosargentinos.magyp.gob.ar/contenido/publicaciones/calidad/Guias/GRotulado.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>Alimentos Argentinos — Guía de rotulado para alimentos envasados</a></li>
+</ul>
+</div>
+</div>
+</article>
+<!-- ================= PROYECTO 03 ================= -->
+<article class="proj" id="p03">
+<div class="wrap">
+<header class="proj-head">
+<div class="proj-num" aria-hidden="true">03</div>
+<div>
+<span class="proj-area">Materias primas</span>
+<h2>Control de recepción de materias primas e ingredientes</h2>
+</div>
+</header>
+<div class="proj-body">
+<dl class="facts" style="grid-template-columns:1fr">
+<div><dt>Tipo de trabajo</dt><dd>proyecto académico personal simulado. Todos los lotes, proveedores, datos y hallazgos son ficticios. No representa una evaluación real de proveedores ni experiencia laboral.</dd></div>
+</dl>
+<h3>Resumen</h3>
+<div class="prose"><p>Se propone un procedimiento documental preliminar para evaluar la recepción de materias primas e ingredientes en una industria alimentaria. El ejemplo utiliza harina de trigo en bolsas para elaborar galletitas y contempla documentación, identificación, integridad del embalaje, condiciones de transporte, lote y criterios de aceptación definidos por la empresa. El objetivo es mostrar cómo una revisión sistemática ayuda a decidir si un insumo se acepta, se retiene para evaluación o se rechaza.</p></div>
+<h3>Objetivos</h3>
+<ul class="ticks prose">
+<li>Registrar los datos relevantes de la recepción.</li>
+<li>Comparar la entrega con una especificación aprobada.</li>
+<li>Reconocer condiciones que justifiquen aceptación, retención o rechazo.</li>
+<li>Documentar desvíos y acciones tomadas.</li>
+<li>Vincular el insumo con su proveedor y lote.</li>
+</ul>
+<h3>Descripción del caso simulado</h3>
+<div class="form">
+<div class="form-top"><b>Caso simulado</b><span class="code">HT-2610</span></div>
+<dl>
+<div><dt>Producto recibido</dt><dd>harina de trigo en bolsas cerradas.</dd></div>
+<div><dt>Proveedor</dt><dd>Molino del Sur S.A. (ficticio).</dd></div>
+<div><dt>Lote de proveedor</dt><dd>HT-2610 (ficticio).</dd></div>
+<div><dt>Cantidad recibida</dt><dd>40 bolsas de 25 kg (dato ficticio).</dd></div>
+<div><dt>Fecha de recepción</dt><dd>15/10/2026 (dato ficticio).</dd></div>
+<div><dt>Uso previsto</dt><dd>elaboración de galletitas saladas.</dd></div>
+<div class="full"><dt>Especificación de compra</dt><dd>documento interno hipotético que define identidad, condiciones del embalaje, requisitos documentales y criterios de aceptación. No se inventan límites físico-químicos ni microbiológicos: deben establecerse con base en el producto, la normativa y la evaluación técnica.</dd></div>
+</dl>
+</div>
+<h3>Procedimiento propuesto</h3>
+<ol class="steps">
+<li>Verificar que el proveedor y el insumo correspondan a los aprobados para la compra.</li>
+<li>Comparar la documentación de entrega con la orden de compra y la especificación vigente.</li>
+<li>Comprobar identidad, lote, cantidad, fecha de duración cuando corresponda y legibilidad de la identificación.</li>
+<li>Inspeccionar visualmente las bolsas y el medio de transporte para detectar humedad, roturas, suciedad, plagas o indicios de contaminación.</li>
+<li>Revisar las condiciones de transporte según los requisitos establecidos para el insumo.</li>
+<li>Definir y documentar el resultado: aceptar, retener para evaluación o rechazar.</li>
+<li>Identificar y almacenar el material aceptado según sus condiciones de conservación y el sistema de rotación aplicable.</li>
+<li>Conservar registros que permitan rastrear proveedor, fecha, cantidad, lote y decisión de recepción.</li>
+</ol>
+<h3>Lista de verificación de recepción</h3>
+<table class="tbl">
+<thead><tr><th>Criterio</th><th>Evidencia</th><th>Resultado simulado</th><th>Acción si hay desvío</th></tr></thead>
+<tbody>
+<tr><td class="stage">Proveedor autorizado</td><td data-l="Evidencia">listado o documentación de proveedores aprobados.</td><td data-l="Resultado simulado"><span class="pill">pendiente de verificación.</span></td><td data-l="Acción si hay desvío">retener para confirmar el estado del proveedor.</td></tr>
+<tr><td class="stage">Identidad del insumo</td><td data-l="Evidencia">nombre del producto y coincidencia con la compra.</td><td data-l="Resultado simulado"><span class="pill">conforme en el escenario.</span></td><td data-l="Acción si hay desvío">aclarar discrepancias antes de aceptar.</td></tr>
+<tr><td class="stage">Identificación del lote</td><td data-l="Evidencia">código legible y vínculo con documentación.</td><td data-l="Resultado simulado"><span class="pill">conforme en el escenario.</span></td><td data-l="Acción si hay desvío">retener si no puede asegurarse la trazabilidad.</td></tr>
+<tr><td class="stage">Integridad de bolsas</td><td data-l="Evidencia">ausencia de roturas, humedad o contaminación visible.</td><td data-l="Resultado simulado"><span class="pill warn">una bolsa dañada en el escenario.</span></td><td data-l="Acción si hay desvío">segregar la unidad afectada y evaluar el alcance.</td></tr>
+<tr><td class="stage">Transporte</td><td data-l="Evidencia">limpieza, protección y condiciones pertinentes.</td><td data-l="Resultado simulado"><span class="pill">pendiente de verificación.</span></td><td data-l="Acción si hay desvío">retener y documentar si hay dudas relevantes.</td></tr>
+<tr><td class="stage">Documentación técnica</td><td data-l="Evidencia">especificación vigente y documentos acordados.</td><td data-l="Resultado simulado"><span class="pill">pendiente de verificación.</span></td><td data-l="Acción si hay desvío">solicitar documentación faltante.</td></tr>
+<tr><td class="stage">Cantidad recibida</td><td data-l="Evidencia">comparación con remito u orden de compra.</td><td data-l="Resultado simulado"><span class="pill">40 bolsas; dato ficticio.</span></td><td data-l="Acción si hay desvío">registrar diferencias y resolverlas.</td></tr>
+<tr><td class="stage">Decisión final</td><td data-l="Evidencia">evidencia disponible y criterios cumplidos.</td><td data-l="Resultado simulado"><span class="pill warn">no definida para el lote completo.</span></td><td data-l="Acción si hay desvío">no liberar material retenido hasta documentar la disposición.</td></tr>
+</tbody>
+</table>
+<h3>Ejemplo de no conformidad simulada</h3>
+<div class="form">
+<div class="form-top"><b>No conformidad de recepción</b><span class="code">NC-REC-001</span></div>
+<dl>
+<div class="full"><dt>Hallazgo</dt><dd>durante la inspección de recepción se observa una bolsa de harina rota y con posible exposición del contenido.</dd></div>
+<div class="full"><dt>Identificación</dt><dd>NC-REC-001 (ficticia). Lote relacionado: HT-2610 (ficticio).</dd></div>
+<div class="full"><dt>Riesgo a evaluar</dt><dd>posible contaminación física o microbiológica; el alcance depende de la condición y del contacto con el entorno.</dd></div>
+<div class="full"><dt>Contención inicial</dt><dd>separar e identificar la unidad afectada y evitar su uso mientras se evalúa.</dd></div>
+<div class="full"><dt>Evaluación</dt><dd>revisar la condición del material, el resto del lote, las condiciones del transporte y los criterios de la especificación.</dd></div>
+<div class="full"><dt>Disposición</dt><dd>aceptar únicamente las unidades que cumplan criterios documentados; rechazar o devolver las unidades no aptas según el procedimiento aplicable.</dd></div>
+<div class="full"><dt>Seguimiento</dt><dd>registrar la decisión, comunicar al proveedor y evaluar si corresponde una acción correctiva o seguimiento del desempeño.</dd></div>
+</dl>
+</div>
+<h3>Modelo de registro de recepción</h3>
+<div class="form">
+<div class="form-top"><b>Registro de recepción</b><span class="code">REC-001</span></div>
+<dl>
+<div><dt>Código del registro</dt><dd>REC-001.</dd></div>
+<div><dt>Fecha</dt><dd>15/10/2026 (ficticia).</dd></div>
+<div><dt>Proveedor</dt><dd>Molino del Sur S.A. (ficticio).</dd></div>
+<div><dt>Materia prima</dt><dd>Harina de trigo.</dd></div>
+<div><dt>Lote</dt><dd>HT-2610 (ficticio).</dd></div>
+<div><dt>Cantidad</dt><dd>40 bolsas de 25 kg (dato ficticio).</dd></div>
+<div><dt>Documentación</dt><dd>pendiente de verificación.</dd></div>
+<div><dt>Condición del transporte</dt><dd>pendiente de verificación.</dd></div>
+<div class="full"><dt>Estado del embalaje</dt><dd>una bolsa dañada en el escenario simulado.</dd></div>
+<div class="full"><dt>Decisión</dt><dd>retención de la unidad afectada para evaluación; decisión del resto según evidencia y criterios definidos.</dd></div>
+<div class="full"><dt>Responsable</dt><dd>a completar por el responsable del caso simulado.</dd></div>
+<div class="full"><dt>Observaciones</dt><dd>no utilizar material retenido hasta documentar su disposición.</dd></div>
+</dl>
+</div>
+<h3>Indicadores de seguimiento propuestos</h3>
+<ul class="ticks prose">
+<li>Porcentaje de entregas aceptadas sin desvíos.</li>
+<li>Cantidad de no conformidades de recepción por proveedor.</li>
+<li>Porcentaje de registros de recepción completos.</li>
+<li>Tiempo promedio para resolver materiales retenidos.</li>
+</ul>
+<p class="note prose">Para utilizarlos en una empresa deben definirse formalmente su fórmula, frecuencia, fuente de datos y responsable. No se calculan resultados porque el caso no dispone de una base de datos real.</p>
+<h3>Conclusión</h3>
+<p class="conclusion">La recepción es una instancia importante del control de calidad porque permite detectar problemas antes de que el insumo ingrese al proceso productivo. La comparación con especificaciones documentadas, la inspección apropiada, la trazabilidad y la gestión de materiales retenidos contribuyen a prevenir el uso de insumos no aptos. El procedimiento debe adaptarse a cada materia prima y no reemplaza los análisis, certificados o controles técnicos que correspondan.</p>
+<h3>Fuentes de consulta</h3>
+<ul class="sources">
+<li><a href="https://www.argentina.gob.ar/anmat/codigoalimentario" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>ANMAT — Código Alimentario Argentino</a></li>
+<li><a href="https://codex.fao.org/codex-texts/find-a-codex-text" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>Codex Alimentarius — Principios generales de higiene de los alimentos, CXC 1-1969</a></li>
+<li><a href="https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-587-1997-50844/actualizacion" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>Resolución 587/1997 — requisitos higiénico-sanitarios para alimentos elaborados/industrializados</a></li>
+</ul>
+</div>
+</div>
+</article>
+<!-- ================= PROYECTO 04 ================= -->
+<article class="proj" id="p04">
+<div class="wrap">
+<header class="proj-head">
+<div class="proj-num" aria-hidden="true">04</div>
+<div>
+<span class="proj-area">Control de procesos</span>
+<h2>Seguimiento de parámetros durante un proceso de elaboración</h2>
+</div>
+</header>
+<div class="proj-body">
+<dl class="facts" style="grid-template-columns:1fr">
+<div><dt>Tipo de trabajo</dt><dd>proyecto académico personal simulado. Producto, proceso, lotes, registros y resultados son ficticios. No representa producción real, análisis de laboratorio ni experiencia laboral.</dd></div>
+</dl>
+<h3>Resumen</h3>
+<div class="prose"><p>Se presenta un caso hipotético de seguimiento de una variable durante la elaboración de galletitas saladas. Se propone un registro de control, se simula una desviación y se describe cómo debería investigarse y gestionarse. El objetivo es ilustrar la importancia de comparar los datos con especificaciones previamente aprobadas, conservar registros y evitar que un producto potencialmente no conforme avance sin evaluación.</p></div>
+<h3>Objetivos</h3>
+<ul class="ticks prose">
+<li>Describir un flujo de proceso simplificado para un alimento horneado.</li>
+<li>Distinguir entre una variable de proceso, un criterio de aceptación y un límite crítico validado.</li>
+<li>Proponer un registro de monitoreo con lote, hora, resultado, responsable y acciones.</li>
+<li>Analizar una desviación hipotética y proponer contención, investigación y seguimiento.</li>
+<li>Reconocer que los parámetros y sus límites deben establecerse con evidencia técnica del producto y del proceso real.</li>
+</ul>
+<h3>Producto y flujo de proceso</h3>
+<div class="prose"><p><strong>Producto:</strong> galletitas saladas. Producto y proceso hipotéticos, utilizados únicamente con fines formativos.</p></div>
+<p style="margin:18px 0 4px"><strong>Flujo simplificado:</strong></p>
+<ol class="flow">
+<li><span>recepción y pesado de ingredientes</span></li>
+<li><span>dosificación</span></li>
+<li><span>mezclado</span></li>
+<li><span>laminado y corte</span></li>
+<li><span>horneado</span></li>
+<li><span>enfriamiento</span></li>
+<li><span>envasado</span></li>
+<li><span>identificación de lote</span></li>
+<li><span>almacenamiento.</span></li>
+</ol>
+<div class="prose"><p><strong>Variable elegida para el ejercicio:</strong> temperatura indicada del horno. Puede influir en la consistencia del proceso, pero no se asume por sí sola como prueba de inocuidad ni como punto crítico de control. Los límites de operación deben definirse según la formulación, el equipo, la geometría del producto y los objetivos de calidad e inocuidad.</p></div>
+<h3>Criterio del ejercicio</h3>
+<div class="prose"><p>Para evitar sugerir un parámetro industrial no validado, no se fija una temperatura de horneado. En un caso real, el rango aceptable, la frecuencia de medición y el método de control deben completarse a partir de una especificación aprobada por la empresa y de la evaluación técnica correspondiente. El siguiente registro solo utiliza resultados cualitativos ficticios respecto de ese rango.</p></div>
+<h3>Registro de monitoreo simulado</h3>
+<table class="tbl">
+<thead><tr><th>Hora</th><th>Lectura</th><th>Evaluación</th><th>Acción propuesta</th></tr></thead>
+<tbody>
+<tr><td class="stage">08:00</td><td data-l="Lectura"><span class="pill">Dentro del rango aprobado (referencia hipotética).</span></td><td data-l="Evaluación">dentro del criterio del ejercicio.</td><td data-l="Acción propuesta">continuar monitoreo según procedimiento.</td></tr>
+<tr><td class="stage">08:30</td><td data-l="Lectura"><span class="pill">Dentro del rango aprobado (referencia hipotética).</span></td><td data-l="Evaluación">dentro del criterio del ejercicio.</td><td data-l="Acción propuesta">continuar monitoreo según procedimiento.</td></tr>
+<tr><td class="stage">09:00</td><td data-l="Lectura"><span class="pill warn">Fuera del rango aprobado (referencia hipotética).</span></td><td data-l="Evaluación">desvío simulado.</td><td data-l="Acción propuesta">informar el desvío y contener el producto potencialmente afectado.</td></tr>
+<tr><td class="stage">09:30</td><td data-l="Lectura"><span class="pill">Dentro del rango aprobado (referencia hipotética).</span></td><td data-l="Evaluación">lectura nuevamente dentro del criterio.</td><td data-l="Acción propuesta">no liberar automáticamente; reanudar según evaluación y autorización.</td></tr>
+</tbody>
+</table>
+<p class="note prose" style="margin-top:14px">Los resultados son inventados para mostrar cómo documentar un desvío. No representan parámetros recomendados ni demuestran que el producto sea seguro o conforme.</p>
+<h3>Gestión de la desviación</h3>
+<div class="form">
+<div class="form-top"><b>Gestión de la desviación</b><span class="code">NC-PROC-001</span></div>
+<dl>
+<div class="full"><dt>Código</dt><dd>NC-PROC-001 (ficticio).</dd></div>
+<div class="full"><dt>Desvío</dt><dd>a las 09:00, la lectura indicada queda fuera del rango hipotético aprobado para el ejercicio.</dd></div>
+<div class="full"><dt>Contención inmediata</dt><dd>informar al responsable, identificar el intervalo potencialmente afectado y retener el producto relacionado mientras se evalúa.</dd></div>
+<div class="full"><dt>Investigación</dt><dd>verificar la lectura y el instrumento, revisar registros anteriores y posteriores, condiciones del equipo, duración del desvío y trazabilidad del producto.</dd></div>
+<div class="full"><dt>Evaluación del producto</dt><dd>el responsable competente determina el alcance, la disposición y si hacen falta verificaciones adicionales. No liberar el producto solo porque una lectura posterior vuelva al rango.</dd></div>
+<div class="full"><dt>Acción correctiva</dt><dd>investigar la causa, corregir el problema del equipo o del procedimiento y evaluar la eficacia de la acción.</dd></div>
+<div class="full"><dt>Cierre</dt><dd>documentar la decisión, evidencia, responsables y autorización de cierre.</dd></div>
+</dl>
+</div>
+<h3>Modelo de registro de control de proceso</h3>
+<div class="form">
+<div class="form-top"><b>Registro de control de proceso</b><span class="code">GAL-041</span></div>
+<dl>
+<div><dt>Producto</dt><dd>Galletitas saladas (caso ficticio).</dd></div>
+<div><dt>Lote</dt><dd>GAL-041 (ficticio).</dd></div>
+<div><dt>Fecha / turno</dt><dd>caso simulado.</dd></div>
+<div><dt>Equipo</dt><dd>horno H-01 (ficticio).</dd></div>
+<div class="full"><dt>Variable monitoreada</dt><dd>temperatura indicada del horno.</dd></div>
+<div class="full"><dt>Criterio de aceptación</dt><dd>completar con el rango definido y aprobado para el proceso real.</dd></div>
+<div class="full"><dt>Frecuencia</dt><dd>definir según evaluación de riesgos y procedimiento aprobado.</dd></div>
+<div class="full"><dt>Resultado</dt><dd>desvío cualitativo simulado a las 09:00.</dd></div>
+<div class="full"><dt>Acción inmediata</dt><dd>aviso y retención del producto potencialmente afectado.</dd></div>
+<div><dt>Evaluación y disposición</dt><dd>a completar por responsable competente.</dd></div>
+<div class="last"><dt>Responsable / firma</dt><dd>a completar en el caso simulado.</dd></div>
+</dl>
+</div>
+<h3>Monitoreo y validación</h3>
+<div class="prose"><p>El monitoreo permite comprobar de forma planificada si una variable se mantiene dentro de un criterio establecido. La validación requiere evidencia técnica de que el proceso o la medida de control puede lograr el resultado previsto. Registrar una temperatura no demuestra por sí solo que el alimento alcanzó una condición de inocuidad adecuada. Los límites críticos, cuando correspondan, deben definirse mediante análisis del proceso y no por elección arbitraria.</p></div>
+<h3>Conclusión</h3>
+<p class="conclusion">Un registro ordenado permite detectar una desviación, delimitar el producto potencialmente afectado y documentar su evaluación. La respuesta no consiste únicamente en ajustar el equipo: también requiere investigar la causa, decidir sobre el producto con evidencia y verificar que las acciones correctivas sean eficaces. La selección de variables, frecuencias y límites debe basarse en especificaciones aprobadas y evaluación técnica del proceso real.</p>
+<h3>Fuentes de consulta</h3>
+<ul class="sources">
+<li><a href="https://www.argentina.gob.ar/anmat/codigoalimentario" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>ANMAT — Código Alimentario Argentino</a></li>
+<li><a href="https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-587-1997-50844/actualizacion" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>Resolución 587/1997 — requisitos generales de higiene</a></li>
+<li><a href="https://codex.fao.org/codex-texts/find-a-codex-text" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>Codex Alimentarius — Códigos de prácticas, incluidos los Principios Generales de Higiene de los Alimentos (CXC 1-1969)</a></li>
+<li><a href="https://www.anmat.gob.ar/portafolio_educativo/Capitulo4.asp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5"/></svg>ANMAT — Portafolio educativo sobre inocuidad de los alimentos</a></li>
+</ul>
+</div>
+</div>
+</article>
+<!-- ================= CONTACTO ================= -->
+<section class="contact" id="contacto">
+<div class="wrap">
+<h2>Contacto profesional</h2>
+<p class="lead">Estoy abierta a oportunidades que me permitan continuar mi formación y comenzar mi desarrollo profesional en la industria alimentaria, especialmente en las áreas de Calidad, Inocuidad Alimentaria y Control de Procesos.</p>
+<div class="channels">
+<a href="mailto:milagrosmelet9@gmail.com"><span>Correo electrónico</span><b>milagrosmelet9@gmail.com</b></a>
+<a href="tel:+541135726467"><span>Teléfono</span><b>+54 11 3572 6467</b></a>
+<a href="https://www.linkedin.com/in/milagros-kiara-macarena-melet-4403b3385/" target="_blank" rel="noopener"><span>LinkedIn</span><b>LinkedIn · Milagros Melet</b></a>
+</div>
+<div class="actions">
+<a class="btn btn-light" href="CV-Milagros-Melet.pdf" download>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>CV
+</a>
+</div>
+<div class="method">
+<h3>Nota metodológica</h3>
+<p>Los proyectos presentados son simulaciones académicas elaboradas con fines formativos. No representan trabajos realizados en empresas ni auditorías, ensayos o validaciones reales.</p>
+</div>
+<p class="foot">Milagros Kiara Macarena Melet</p>
+</div>
+</section>
+</main>
+<a class="fab" id="fab" href="CV-Milagros-Melet.pdf" download aria-label="Descargar CV">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>CV
+</a>
+<script>
+(function(){
+var bar=document.getElementById('bar'), fab=document.getElementById('fab');
+var sheet=document.getElementById('sheet'), openB=document.getElementById('menuOpen'), closeB=document.getElementById('menuClose');
+var hero=document.getElementById('inicio');
+function onScroll(){
+var y=window.scrollY, h=hero.offsetHeight-80;
+bar.classList.toggle('solid', y>h*0.15);
+fab.classList.toggle('show', y>h && y<document.body.scrollHeight-window.innerHeight*1.6);
+}
+window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+function setMenu(open){
+sheet.classList.toggle('open',open);
+sheet.setAttribute('aria-hidden',!open);
+openB.setAttribute('aria-expanded',open);
+document.body.style.overflow=open?'hidden':'';
+}
+openB.addEventListener('click',function(){setMenu(true)});
+closeB.addEventListener('click',function(){setMenu(false)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+// Scroll suave dentro de la página, sin recargar
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+a.addEventListener('click',function(e){
+var id=a.getAttribute('href').slice(1), t=document.getElementById(id);
+if(!t) return;
+e.preventDefault();
+setMenu(false);
+var top = id==='inicio' ? 0 : t.getBoundingClientRect().top + window.scrollY - (bar.offsetHeight+12);
+window.scrollTo({top:top, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto':'smooth'});
+history.replaceState(null,'','#'+id);
+});
+});
+// Marca la sección visible en el menú
+var links=document.querySelectorAll('[data-s]');
+var map={perfil:'inicio',inicio:'inicio',formacion:'formacion',proyectos:'p01',p01:'p01',p02:'p02',p03:'p03',p04:'p04',contacto:'contacto'};
+var io=new IntersectionObserver(function(entries){
+entries.forEach(function(en){
+if(en.isIntersecting){
+var k=map[en.target.id];
+links.forEach(function(l){l.classList.toggle('on',l.dataset.s===k)});
+}
+});
+},{rootMargin:'-45% 0px -50% 0px'});
+Object.keys(map).forEach(function(id){var el=document.getElementById(id); if(el) io.observe(el)});
+})();
+</script>
+</body>
+</html>
