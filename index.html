@@ -90,8 +90,7 @@ p{margin:0 0 1em}
 .facts div+div{border-left:1px solid var(--line)}
 .facts dt{font-size:13.5px;color:var(--muted);margin-bottom:2px}
 .facts dd{margin:0;font-weight:500}
-.subjects{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:6px 0 0;padding:0}
-.subjects li{background:var(--white);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:15.5px}
+.facts:last-child{margin-bottom:0}
 .know{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid var(--forest)}
 .know section{padding:26px 28px 6px 0}
 .know section+section{padding-left:28px;border-left:1px solid var(--line)}
@@ -176,14 +175,15 @@ p{margin:0 0 1em}
 .nav{display:none}
 .menu-btn{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
 .menu-btn svg{width:22px;height:22px}
-.sheet{display:block;position:fixed;inset:0;z-index:60;background:var(--forest);color:#fff;padding:calc(var(--bar) + 12px) 28px 32px;transform:translateY(-100%);transition:transform .35s ease;overflow-y:auto}
+.sheet{display:block;position:fixed;top:0;left:0;right:0;z-index:60;max-height:86vh;background:var(--forest);color:#fff;padding:calc(var(--bar) + 2px) 24px 20px;transform:translateY(-110%);transition:transform .3s ease;overflow-y:auto;border-radius:0 0 18px 18px;box-shadow:0 18px 40px rgba(10,25,18,.35)}
 .sheet.open{transform:none}
 .sheet ul{list-style:none;margin:0;padding:0}
-.sheet a{display:block;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.14);color:#fff;text-decoration:none;font:500 22px/1.25 var(--serif)}
+.sheet a{display:block;padding:12px 2px;border-bottom:1px solid rgba(255,255,255,.12);color:#fff;text-decoration:none;font:500 17px/1.3 var(--sans)}
+.sheet li:last-child a{border-bottom:0}
 .sheet a.on{color:var(--sage)}
 .sheet a.btn-light{color:var(--forest)}
-.sheet .btn{margin-top:28px;font-family:var(--sans);font-size:16px;border-bottom:0;padding:0 22px;display:inline-flex}
-.sheet-close{position:absolute;top:12px;right:20px}
+.sheet .btn{margin-top:14px;font-family:var(--sans);font-size:16px;border-bottom:0;padding:0 22px;display:inline-flex}
+.sheet-close{position:absolute;top:calc((var(--bar) - 44px)/2);right:20px}
 .split{grid-template-columns:minmax(0,1fr);gap:16px}
 .split>*{min-width:0}
 .proj-body{margin-left:0}
@@ -205,6 +205,7 @@ body{font-size:16.5px;line-height:1.68}
 .hero .focus{font-size:15.5px}
 .hero .actions{margin-top:24px}
 .hero .actions .btn{flex:1;min-height:50px}
+.hero .actions .btn-in{display:none}
 .btn{min-height:50px}
 .sec{padding:64px 0}
 .split{padding:28px 0}
@@ -212,7 +213,6 @@ body{font-size:16.5px;line-height:1.68}
 .lead{font-size:17.5px}
 .facts{grid-template-columns:1fr}
 .facts div+div{border-left:0;border-top:1px solid var(--line)}
-.subjects li{font-size:14.5px;padding:7px 14px}
 .chips{display:flex;gap:8px;overflow-x:auto;margin:0 -20px 24px;padding:2px 20px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .chips::-webkit-scrollbar{display:none}
 .chips a{flex:none;padding:9px 15px;border-radius:999px;background:var(--white);border:1px solid var(--line);font-size:14.5px;font-weight:500;color:var(--forest);text-decoration:none}
@@ -250,6 +250,24 @@ body{font-size:16.5px;line-height:1.68}
 .fab{display:inline-flex;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:40;height:50px;padding:0 22px;border-radius:999px;background:var(--forest);color:#fff;box-shadow:0 8px 24px rgba(20,40,30,.28);font:600 15px/1 var(--sans);align-items:center;gap:8px;text-decoration:none;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s}
 .fab svg{width:18px;height:18px}
 .fab.show{opacity:1;transform:none;pointer-events:auto}
+}
+@media (min-width:1280px){
+:root{--wrap:1440px;--read:100ch}
+.wrap{padding:0 56px}
+.hero h1{max-width:none;font-size:clamp(52px,4.3vw,84px)}
+.hero .focus{font-size:18px}
+.split{grid-template-columns:300px 1fr;gap:64px}
+.lead{font-size:20.5px}
+body{font-size:17.5px}
+.proj-head{grid-template-columns:150px 1fr}
+.proj-body{margin-left:174px}
+.proj h2{max-width:none}
+.facts{max-width:none}
+.form{max-width:none}
+.tbl{font-size:16px}
+.contact .lead{max-width:90ch}
+.channels{max-width:none}
+.method{max-width:none}
 }
 </style>
 </head>
@@ -302,6 +320,7 @@ body{font-size:16.5px;line-height:1.68}
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>CV
 </a>
 <a class="btn btn-ghost" href="#contacto">Contacto</a>
+<a class="btn btn-ghost btn-in" href="https://www.linkedin.com/in/milagros-kiara-macarena-melet-4403b3385/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.6 8.65 22 11.2 22 14.3V21h-4v-5.9c0-1.4-.03-3.2-1.95-3.2-1.96 0-2.26 1.53-2.26 3.1V21H10z"/></svg>LinkedIn</a>
 </div>
 </div>
 </section>
@@ -342,14 +361,6 @@ body{font-size:16.5px;line-height:1.68}
 <div><dt>Carrera</dt><dd><strong>Tecnicatura en Tecnología de los Alimentos</strong></dd></div>
 <div><dt>Institución</dt><dd>Universidad Nacional de Hurlingham (UNAHUR).<br>Estado: en curso.</dd></div>
 </dl>
-<h3 style="margin-bottom:12px">Asignaturas cursadas</h3>
-<ul class="subjects">
-<li>Introducción a la Tecnología de los Alimentos</li>
-<li>Introducción a la Química</li>
-<li>Seguridad e Higiene</li>
-<li>Biología</li>
-<li>Matemática I</li>
-</ul>
 </div>
 </div>
 <div class="split wide">
@@ -797,6 +808,7 @@ document.body.style.overflow=open?'hidden':'';
 openB.addEventListener('click',function(){setMenu(true)});
 closeB.addEventListener('click',function(){setMenu(false)});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+document.addEventListener('click',function(e){if(sheet.classList.contains('open')&&!sheet.contains(e.target)&&!openB.contains(e.target))setMenu(false)});
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
 a.addEventListener('click',function(e){
 var id=a.getAttribute('href').slice(1), t=document.getElementById(id);
