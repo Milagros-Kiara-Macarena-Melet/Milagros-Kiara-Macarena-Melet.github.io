@@ -6,6 +6,9 @@
 <title>Milagros Kiara Macarena Melet · Tecnología de los Alimentos</title>
 <meta name="description" content="Portfolio de Milagros Kiara Macarena Melet, estudiante de la Tecnicatura en Tecnología de los Alimentos (UNAHUR). Calidad, inocuidad alimentaria y control de procesos.">
 <meta name="theme-color" content="#1F3A2E">
+<meta name="author" content="Milagros Kiara Macarena Melet">
+<meta property="og:title" content="Milagros Kiara Macarena Melet · Tecnología de los Alimentos">
+<meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F3A2E'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' text-anchor='middle' fill='%23F6F7F3'%3EMM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,9 +47,6 @@ h1,h2,h3,h4{font-family:var(--serif);color:var(--forest);margin:0;line-height:1.
 p{margin:0 0 1em}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 40px}
 [id]{scroll-margin-top:calc(var(--bar) + 16px)}
-.skip{position:absolute;left:-9999px}
-.skip:focus{left:16px;top:12px;z-index:100;background:var(--white);padding:8px 14px}
-/* ---------- Barra de navegación ---------- */
 .bar{position:fixed;inset:0 0 auto 0;height:var(--bar);z-index:50;display:flex;align-items:center;transition:background .25s,box-shadow .25s}
 .bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;width:100%;max-width:1280px}
 .split.wide{grid-template-columns:1fr;gap:28px}
@@ -60,31 +60,24 @@ p{margin:0 0 1em}
 .nav a.on{color:#fff;background:rgba(255,255,255,.16)}
 .menu-btn{display:none}
 .sheet{display:none}
-/* ---------- Portada ---------- */
-.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--forest)}
+.hero{position:relative;min-height:min(640px,72vh);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--forest)}
 .hero-img{position:absolute;inset:0;background:url("https://images.unsplash.com/photo-1475906089153-644d9452ce87?fm=jpg&q=80&w=2400&fit=crop") center 55%/cover no-repeat;transform:scale(1.04);animation:settle 1.6s ease-out forwards}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,35,27,.55) 0%,rgba(18,35,27,.55) 40%,rgba(18,35,27,.92) 100%)}
-.hero .wrap{position:relative;z-index:1;width:100%;padding-top:calc(var(--bar) + 40px);padding-bottom:88px}
-.hero h1{color:#fff;font-size:clamp(44px,6vw,80px);font-weight:600;line-height:1.04;letter-spacing:-.5px;max-width:14ch}
-.hero .role{margin:26px 0 6px;font-size:20px;font-weight:500;letter-spacing:.4px;color:#E8EFE4}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-top:calc(var(--bar) + 48px);padding-bottom:64px}
+.hero h1{color:#fff;font-size:clamp(40px,5.2vw,68px);font-weight:600;line-height:1.04;letter-spacing:-.5px;max-width:14ch}
+.hero .role{margin:22px 0 6px;font-size:18px;font-weight:500;letter-spacing:.4px;color:#E8EFE4}
 .hero .focus{margin:0;font-size:17px;color:rgba(255,255,255,.8)}
-.hero .actions{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.hero .actions{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
 @keyframes settle{to{transform:scale(1)}}
-.btn{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px;border-radius:10px;font:600 15.5px/1 var(--sans);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .2s,color .2s,border-color .2s}
-.btn svg{width:18px;height:18px}
-.btn-light{background:#fff;color:var(--forest)}
-.btn-light:hover{background:var(--paper-2);color:var(--forest)}
-.btn-ghost{color:#fff;border-color:rgba(255,255,255,.45)}
-.btn-ghost:hover{color:#fff;border-color:#fff;background:rgba(255,255,255,.08)}
-.btn-solid{background:var(--forest);color:#fff}
-.btn-solid:hover{background:var(--forest-2);color:#fff}
-/* ---------- Secciones ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:0 24px;border-radius:999px;font:600 15px/1 var(--sans);letter-spacing:.2px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease}
+.btn svg{width:17px;height:17px;flex:none}
+.btn:active{transform:translateY(0)}
+.btn-light{background:#fff;color:var(--forest);box-shadow:0 1px 2px rgba(10,25,18,.12),0 6px 18px rgba(10,25,18,.18)}
+.btn-light:hover{color:var(--forest);transform:translateY(-1px);box-shadow:0 2px 4px rgba(10,25,18,.14),0 10px 24px rgba(10,25,18,.22)}
+.btn-ghost{color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.06);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.btn-ghost:hover{color:#fff;border-color:#fff;background:rgba(255,255,255,.14);transform:translateY(-1px)}
 .sec{padding:112px 0}
 .sec.tint{background:var(--paper-2)}
-.sec.white{background:var(--white)}
-.sec-head{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:start}
-.sec-title{font-size:34px;letter-spacing:-.2px}
-.sec-kicker{display:block;font:500 14px/1.4 var(--sans);color:var(--muted);margin-top:10px}
 .prose{max-width:var(--read)}
 .prose p{color:#2C3A32}
 .lead{font-size:19.5px;line-height:1.65;color:var(--ink)}
@@ -106,7 +99,6 @@ p{margin:0 0 1em}
 .ticks{list-style:none;margin:0;padding:0}
 .ticks li{position:relative;padding-left:26px;margin-bottom:12px;font-size:16px;line-height:1.6;color:#2C3A32}
 .ticks li::before{content:"";position:absolute;left:2px;top:.62em;width:12px;height:6px;border-left:2px solid var(--forest-2);border-bottom:2px solid var(--forest-2);transform:rotate(-45deg)}
-/* ---------- Índice de proyectos ---------- */
 .index{list-style:none;margin:0 0 28px;padding:0;border-top:1px solid var(--line)}
 .index a{display:grid;grid-template-columns:72px 1fr 28px;align-items:center;gap:16px;padding:22px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:background .2s,padding .2s}
 .index a:hover{background:var(--white);padding-left:14px}
@@ -114,7 +106,6 @@ p{margin:0 0 1em}
 .index .t{font-size:18px;font-weight:500}
 .index svg{width:20px;height:20px;color:var(--muted)}
 .disclaimer{max-width:var(--read);font-size:15.5px;color:var(--muted);border-left:3px solid var(--sage);padding:2px 0 2px 18px;margin:0}
-/* ---------- Proyectos ---------- */
 .proj{padding:104px 0;border-top:1px solid var(--line)}
 .proj:nth-of-type(even){background:var(--white)}
 .proj-head{display:grid;grid-template-columns:140px 1fr;gap:24px;align-items:start;margin-bottom:44px}
@@ -130,7 +121,6 @@ p{margin:0 0 1em}
 .flow li+li::before{content:"";width:16px;height:2px;background:var(--sage);flex:none}
 .proj:nth-of-type(even) .flow span{background:var(--paper)}
 .note{font-size:15.5px;color:var(--muted)}
-/* Tablas */
 .tbl{width:100%;border-collapse:separate;border-spacing:0;font-size:15.5px;line-height:1.55;background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .proj:nth-of-type(even) .tbl{background:var(--paper)}
 .tbl th{text-align:left;font:600 13.5px/1.3 var(--sans);color:var(--muted);background:var(--paper-2);padding:12px 16px;border-bottom:1px solid var(--line)}
@@ -143,7 +133,6 @@ p{margin:0 0 1em}
 .pill{display:inline-block;border-radius:999px;padding:3px 11px;font-size:13.5px;font-weight:500;background:var(--paper-2);color:var(--forest);white-space:nowrap}
 .pill.warn{background:var(--amber-bg);color:var(--amber)}
 .pill.na{background:#ECEDEA;color:#5E625E}
-/* Formulario de registro */
 .form{border:1.5px solid var(--forest);border-radius:12px;background:var(--white);overflow:hidden;max-width:880px}
 .proj:nth-of-type(even) .form{background:var(--paper)}
 .form-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;background:var(--forest);color:#fff}
@@ -160,22 +149,18 @@ p{margin:0 0 1em}
 .steps li{counter-increment:s;position:relative;padding:0 0 18px 52px;color:#2C3A32}
 .steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--forest-2);display:grid;place-items:center;font:600 15px/1 var(--sans);color:var(--forest)}
 .steps li:not(:last-child)::after{content:"";position:absolute;left:17px;top:36px;bottom:4px;width:1.5px;background:var(--line)}
-.fields{list-style:none;margin:0;padding:0;max-width:var(--read)}
-.fields li{padding:12px 0;border-bottom:1px solid var(--line);color:#2C3A32}
-.fields li:last-child{border-bottom:0}
 .sources{list-style:none;margin:0;padding:0;display:grid;gap:10px;max-width:var(--read)}
 .sources a{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink);background:var(--white);font-size:15.5px;line-height:1.5}
 .proj:nth-of-type(even) .sources a{background:var(--paper)}
 .sources a:hover{border-color:var(--forest-2)}
 .sources svg{flex:none;width:16px;height:16px;margin-top:3px;color:var(--forest-2)}
 .conclusion{max-width:var(--read);font-family:var(--serif);font-size:20px;line-height:1.65;color:var(--ink)}
-/* ---------- Contacto ---------- */
 .contact{background:var(--forest);color:#E7EEE4;padding:112px 0 64px}
 .contact h2{color:#fff;font-size:40px}
 .contact .lead{color:#E7EEE4;max-width:58ch;margin:20px 0 40px}
 .channels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:960px}
-.channels a{display:block;padding:20px 22px;border:1px solid rgba(255,255,255,.22);border-radius:12px;color:#fff;text-decoration:none;transition:border-color .2s,background .2s}
-.channels a:hover{border-color:#fff;background:rgba(255,255,255,.06);color:#fff}
+.channels a{display:block;padding:20px 22px;border:1px solid rgba(255,255,255,.2);border-radius:14px;background:rgba(255,255,255,.04);color:#fff;text-decoration:none;transition:border-color .18s,background .18s,transform .18s}
+.channels a:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.08);color:#fff;transform:translateY(-2px)}
 .channels span{display:block;font-size:13.5px;color:rgba(255,255,255,.7);margin-bottom:6px}
 .channels b{font-weight:500;font-size:16.5px;word-break:break-word}
 .contact .actions{margin-top:28px}
@@ -184,14 +169,12 @@ p{margin:0 0 1em}
 .method p{color:rgba(255,255,255,.75);font-size:15.5px}
 .foot{margin-top:56px;font-size:14px;color:rgba(255,255,255,.55)}
 .fab,.chips{display:none}
-/* ============ Escritorio angosto ============ */
 @media (max-width:1180px){
 .nav a{padding:8px 8px;font-size:14px}
 }
-/* ============ Tablet ============ */
 @media (max-width:1020px){
 .nav{display:none}
-.menu-btn{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:10px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;cursor:pointer}
+.menu-btn{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
 .menu-btn svg{width:22px;height:22px}
 .sheet{display:block;position:fixed;inset:0;z-index:60;background:var(--forest);color:#fff;padding:calc(var(--bar) + 12px) 28px 32px;transform:translateY(-100%);transition:transform .35s ease;overflow-y:auto}
 .sheet.open{transform:none}
@@ -201,7 +184,7 @@ p{margin:0 0 1em}
 .sheet a.btn-light{color:var(--forest)}
 .sheet .btn{margin-top:28px;font-family:var(--sans);font-size:16px;border-bottom:0;padding:0 22px;display:inline-flex}
 .sheet-close{position:absolute;top:12px;right:20px}
-.sec-head,.split{grid-template-columns:minmax(0,1fr);gap:16px}
+.split{grid-template-columns:minmax(0,1fr);gap:16px}
 .split>*{min-width:0}
 .proj-body{margin-left:0}
 .proj-head{grid-template-columns:96px 1fr}
@@ -210,21 +193,20 @@ p{margin:0 0 1em}
 .know section,.know section+section{padding:24px 0 6px;border-left:0;border-top:1px solid var(--line)}
 .know section:first-child{border-top:0}
 }
-/* ============ Celular (diseño exclusivo) ============ */
 @media (max-width:700px){
 :root{--bar:58px}
 body{font-size:16.5px;line-height:1.68}
 .wrap{padding:0 20px}
 .brand{font-size:18px}
 .hero{min-height:auto}
-.hero .wrap{padding-top:calc(var(--bar) + 72px);padding-bottom:56px}
-.hero h1{font-size:42px;line-height:1.06}
+.hero .wrap{padding-top:calc(var(--bar) + 44px);padding-bottom:40px}
+.hero h1{font-size:clamp(32px,9.4vw,40px);line-height:1.08}
 .hero .role{font-size:16px;margin-top:20px}
 .hero .focus{font-size:15.5px}
-.hero .actions{margin-top:28px}
-.hero .actions .btn{flex:1;justify-content:center}
+.hero .actions{margin-top:24px}
+.hero .actions .btn{flex:1;min-height:50px}
+.btn{min-height:50px}
 .sec{padding:64px 0}
-.sec-title{font-size:30px}
 .split{padding:28px 0}
 .split h2{font-size:25px}
 .lead{font-size:17.5px}
@@ -244,7 +226,6 @@ body{font-size:16.5px;line-height:1.68}
 .flow li{flex-direction:column;align-items:stretch;gap:0}
 .flow li+li::before{width:2px;height:12px;margin-left:18px}
 .flow span{font-size:15px}
-/* tablas -> fichas apiladas */
 .tbl,.tbl tbody,.tbl tr,.tbl td{display:block;width:100%}
 .tbl{border:0;background:transparent!important;border-radius:0}
 .tbl thead{display:none}
@@ -266,14 +247,13 @@ body{font-size:16.5px;line-height:1.68}
 .contact h2{font-size:32px}
 .channels{grid-template-columns:1fr}
 .contact .actions .btn{width:100%;justify-content:center}
-.fab{display:inline-flex;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:40;height:50px;padding:0 20px;border-radius:999px;background:var(--forest);color:#fff;box-shadow:0 8px 24px rgba(20,40,30,.28);font:600 15px/1 var(--sans);align-items:center;gap:8px;text-decoration:none;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s}
+.fab{display:inline-flex;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:40;height:50px;padding:0 22px;border-radius:999px;background:var(--forest);color:#fff;box-shadow:0 8px 24px rgba(20,40,30,.28);font:600 15px/1 var(--sans);align-items:center;gap:8px;text-decoration:none;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s}
 .fab svg{width:18px;height:18px}
 .fab.show{opacity:1;transform:none;pointer-events:auto}
 }
 </style>
 </head>
 <body>
-<a class="skip" href="#perfil">Saltar al contenido</a>
 <header class="bar" id="bar">
 <div class="wrap">
 <a class="brand" href="#inicio">Milagros Melet</a>
@@ -311,7 +291,6 @@ body{font-size:16.5px;line-height:1.68}
 </a>
 </div>
 <main>
-<!-- ================= PORTADA ================= -->
 <section class="hero" id="inicio">
 <div class="hero-img" role="img" aria-label="Frascos de laboratorio con brotes verdes"></div>
 <div class="wrap">
@@ -326,7 +305,6 @@ body{font-size:16.5px;line-height:1.68}
 </div>
 </div>
 </section>
-<!-- ================= PERFIL ================= -->
 <section class="sec" id="perfil">
 <div class="wrap">
 <div class="split">
@@ -355,7 +333,6 @@ body{font-size:16.5px;line-height:1.68}
 </div>
 </div>
 </section>
-<!-- ================= FORMACIÓN ================= -->
 <section class="sec tint" id="formacion">
 <div class="wrap">
 <div class="split">
@@ -409,7 +386,6 @@ body{font-size:16.5px;line-height:1.68}
 </div>
 </div>
 </section>
-<!-- ================= PROYECTOS ================= -->
 <section class="sec" id="proyectos">
 <div class="wrap">
 <div class="split">
@@ -432,7 +408,6 @@ body{font-size:16.5px;line-height:1.68}
 </div>
 </div>
 </section>
-<!-- ================= PROYECTO 01 ================= -->
 <article class="proj" id="p01">
 <div class="wrap">
 <header class="proj-head">
@@ -503,7 +478,6 @@ body{font-size:16.5px;line-height:1.68}
 </div>
 </div>
 </article>
-<!-- ================= PROYECTO 02 ================= -->
 <article class="proj" id="p02">
 <div class="wrap">
 <header class="proj-head">
@@ -572,7 +546,6 @@ body{font-size:16.5px;line-height:1.68}
 </div>
 </div>
 </article>
-<!-- ================= PROYECTO 03 ================= -->
 <article class="proj" id="p03">
 <div class="wrap">
 <header class="proj-head">
@@ -684,7 +657,6 @@ body{font-size:16.5px;line-height:1.68}
 </div>
 </div>
 </article>
-<!-- ================= PROYECTO 04 ================= -->
 <article class="proj" id="p04">
 <div class="wrap">
 <header class="proj-head">
@@ -780,7 +752,6 @@ body{font-size:16.5px;line-height:1.68}
 </div>
 </div>
 </article>
-<!-- ================= CONTACTO ================= -->
 <section class="contact" id="contacto">
 <div class="wrap">
 <h2>Contacto profesional</h2>
@@ -826,7 +797,6 @@ document.body.style.overflow=open?'hidden':'';
 openB.addEventListener('click',function(){setMenu(true)});
 closeB.addEventListener('click',function(){setMenu(false)});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
-// Scroll suave dentro de la página, sin recargar
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
 a.addEventListener('click',function(e){
 var id=a.getAttribute('href').slice(1), t=document.getElementById(id);
@@ -838,7 +808,6 @@ window.scrollTo({top:top, behavior: matchMedia('(prefers-reduced-motion: reduce)
 history.replaceState(null,'','#'+id);
 });
 });
-// Marca la sección visible en el menú
 var links=document.querySelectorAll('[data-s]');
 var map={perfil:'inicio',inicio:'inicio',formacion:'formacion',proyectos:'p01',p01:'p01',p02:'p02',p03:'p03',p04:'p04',contacto:'contacto'};
 var io=new IntersectionObserver(function(entries){
